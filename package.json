@@ -1,0 +1,23 @@
+{
+    "name": "cryptoforknote-util",
+    "version": "0.0.1",
+    "main": "cryptonote",
+    "author": {
+        "name": "Infinium Developers",
+        "email": "infiniumdevelopers@proton.me"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Infinium-8/infinium-node-util.git"
+    },
+    "dependencies": {
+        "bindings": "*",
+        "nan": "^2.14.2",
+        "bignum": "^0.13.1"
+    },
+    "keywords": [
+        "cryptonight",
+        "cryptonote",
+        "infinium"
+    ]
+}
