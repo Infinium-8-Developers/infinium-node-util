@@ -7,6 +7,7 @@
 *      TARGET:   any computer with an ANSI C compiler
 *
 *      AUTHOR:   Antoon Bosselaers, ESAT-COSIC
+*      DATE:     1 March 1996
 *      VERSION:  1.0
 *
 *      Copyright (c) 1996 Katholieke Universiteit Leuven

@@ -1,4 +1,4 @@
-
+/* ecrypt-portable.h */
 
 /*
 * WARNING: the conversions defined below are implemented as macros,

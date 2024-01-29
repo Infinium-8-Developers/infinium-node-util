@@ -1,4 +1,4 @@
-
+/* ecrypt-config.h */
 
 /* *** Normally, it should not be necessary to edit this file. *** */
 

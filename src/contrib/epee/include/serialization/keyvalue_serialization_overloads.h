@@ -26,9 +26,12 @@
 
 #pragma once
 
-#include <boost/mpl/vector.hpp>
-#include <boost/mpl/contains.hpp>
+#include <set>
+#include <list>
+#include <vector>
 #include <deque>
+#include <boost/mpl/vector.hpp>
+#include <boost/mpl/contains_fwd.hpp>
 
 namespace epee
 {

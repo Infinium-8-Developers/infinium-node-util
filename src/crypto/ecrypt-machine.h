@@ -1,4 +1,4 @@
-
+/* ecrypt-machine.h */
 
 /*
 * This file is included by 'ecrypt-portable.h'. It allows to override

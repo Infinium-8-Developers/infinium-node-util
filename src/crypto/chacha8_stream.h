@@ -1,4 +1,5 @@
 /* ecrypt-sync.h */
+
 /*
 * Header file for synchronous stream ciphers without authentication
 * mechanism.

@@ -1,6 +1,6 @@
 /********************************************************************\
 *
-*      FILE:     rmd160
+*      FILE:     rmd160.c
 *
 *      CONTENTS: A sample C-implementation of the RIPEMD-160
 *                hash-function.

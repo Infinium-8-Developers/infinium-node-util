@@ -1,4 +1,4 @@
-// Copyright (c) 2023-2024 Infinium Developers
+// Copyright (c) 2014-2018 Zano Project
 // Copyright (c) 2014-2018 The Louisdor Project
 // Copyright (c) 2012-2013 The Cryptonote developers
 // Copyright (c) 2012-2013 The Boolberry developers
@@ -41,7 +41,7 @@ namespace currency
     tx.extra.push_back(alinfo);
     return true;
   }
-  
+
   //---------------------------------------------------------------
   /*
   bool construct_miner_tx(size_t height, size_t median_size, const boost::multiprecision::uint128_t& already_generated_coins,
@@ -1052,26 +1052,26 @@ namespace currency
     }
   }
   //---------------------------------------------------------------
-  void load_wallet_transfer_info_flags(tools::wallet_public::wallet_transfer_info& x)
-  {
-    x.is_service = currency::is_service_tx(x.tx);
-    x.is_mixing = currency::does_tx_have_only_mixin_inputs(x.tx);
-    x.is_mining = currency::is_coinbase(x.tx);
-    if (!x.is_mining)
-      x.fee = currency::get_tx_fee(x.tx);
-    else
-      x.fee = 0;
-    x.show_sender = currency::is_showing_sender_addres(x.tx);
-    tx_out htlc_out = AUTO_VAL_INIT(htlc_out);
-    txin_htlc htlc_in = AUTO_VAL_INIT(htlc_in);
+  // void load_wallet_transfer_info_flags(tools::wallet_public::wallet_transfer_info& x)
+  // {
+  //   x.is_service = currency::is_service_tx(x.tx);
+  //   x.is_mixing = currency::does_tx_have_only_mixin_inputs(x.tx);
+  //   x.is_mining = currency::is_coinbase(x.tx);
+  //   if (!x.is_mining)
+  //     x.fee = currency::get_tx_fee(x.tx);
+  //   else
+  //     x.fee = 0;
+  //   x.show_sender = currency::is_showing_sender_addres(x.tx);
+  //   tx_out htlc_out = AUTO_VAL_INIT(htlc_out);
+  //   txin_htlc htlc_in = AUTO_VAL_INIT(htlc_in);
 
-    x.tx_type = get_tx_type_ex(x.tx, htlc_out, htlc_in);
-    if(x.tx_type == GUI_TX_TYPE_HTLC_DEPOSIT && x.is_income == true)
-    {
-      //need to override amount
-      x.amount = htlc_out.amount;
-    }
-  }
+  //   x.tx_type = get_tx_type_ex(x.tx, htlc_out, htlc_in);
+  //   if(x.tx_type == GUI_TX_TYPE_HTLC_DEPOSIT && x.is_income == true)
+  //   {
+  //     //need to override amount
+  //     x.amount = htlc_out.amount;
+  //   }
+  // }
 
   //---------------------------------------------------------------
   uint64_t get_tx_type_ex(const transaction& tx, tx_out& htlc_out, txin_htlc& htlc_in)
@@ -2898,8 +2898,8 @@ namespace currency
   //-----------------------------------------------------------------------------------------------
   uint64_t get_base_block_reward(bool is_pos, const boost::multiprecision::uint128_t& already_generated_coins, uint64_t height)
   {
-  if (!height)
-    return PREMINE_AMOUNT;
+    if (!height)
+      return PREMINE_AMOUNT;
   
     return CURRENCY_BLOCK_REWARD;
   }
@@ -2975,12 +2975,12 @@ namespace currency
   std::string get_account_address_as_str(const account_public_address& addr)
   {
     if (addr.flags == 0)
-      return tools::base58::encode_addr(CURRENCY_PUBLIC_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr.to_old())); // classic Infinium address
+      return tools::base58::encode_addr(CURRENCY_PUBLIC_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr.to_old())); // classic Zano address
 
     if (addr.flags & ACCOUNT_PUBLIC_ADDRESS_FLAG_AUDITABLE)
-      return tools::base58::encode_addr(CURRENCY_PUBLIC_AUDITABLE_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr)); // new format Infinium address (auditable)
+      return tools::base58::encode_addr(CURRENCY_PUBLIC_AUDITABLE_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr)); // new format Zano address (auditable)
     
-    return tools::base58::encode_addr(CURRENCY_PUBLIC_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr)); // new format Infinium address (normal)
+    return tools::base58::encode_addr(CURRENCY_PUBLIC_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr)); // new format Zano address (normal)
   }
   //-----------------------------------------------------------------------
   bool is_address_like_wrapped(const std::string& addr)
@@ -2993,12 +2993,12 @@ namespace currency
   std::string get_account_address_and_payment_id_as_str(const account_public_address& addr, const payment_id_t& payment_id)
   {
     if (addr.flags == 0)
-      return tools::base58::encode_addr(CURRENCY_PUBLIC_INTEG_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr.to_old()) + payment_id); // classic integrated Infinium address
+      return tools::base58::encode_addr(CURRENCY_PUBLIC_INTEG_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr.to_old()) + payment_id); // classic integrated Zano address
 
     if (addr.flags & ACCOUNT_PUBLIC_ADDRESS_FLAG_AUDITABLE)
-      return tools::base58::encode_addr(CURRENCY_PUBLIC_AUDITABLE_INTEG_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr) + payment_id); // new format integrated Infinium address (auditable)
+      return tools::base58::encode_addr(CURRENCY_PUBLIC_AUDITABLE_INTEG_ADDRESS_BASE58_PREFIX, t_serializable_object_to_blob(addr) + payment_id); // new format integrated Zano address (auditable)
     
-    return tools::base58::encode_addr(CURRENCY_PUBLIC_INTEG_ADDRESS_V2_BASE58_PREFIX, t_serializable_object_to_blob(addr) + payment_id); // new format integrated Infinium address (normal)
+    return tools::base58::encode_addr(CURRENCY_PUBLIC_INTEG_ADDRESS_V2_BASE58_PREFIX, t_serializable_object_to_blob(addr) + payment_id); // new format integrated Zano address (normal)
   }
   //-----------------------------------------------------------------------
   bool get_account_address_from_str(account_public_address& addr, const std::string& str)
@@ -3281,3 +3281,5 @@ namespace currency
 
 
 } // namespace currency
+
+

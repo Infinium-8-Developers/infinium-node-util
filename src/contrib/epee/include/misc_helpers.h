@@ -1,4 +1,4 @@
-// Copyright (c) 2023-2024 Infinium Developers
+// Copyright (c) 2019, Zano Project
 // Copyright (c) 2006-2019, Andrey N. Sabelnikov, www.sabelnikov.net
 // All rights reserved.
 //
