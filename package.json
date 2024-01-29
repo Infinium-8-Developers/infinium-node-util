@@ -1,7 +1,7 @@
 {
     "name": "cryptoforknote-util",
     "version": "0.0.1",
-    "main": "cryptonote",
+    "main": "index.js",
     "author": {
         "name": "Infinium Developers",
         "email": "infiniumdevelopers@proton.me"
