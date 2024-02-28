@@ -6,8 +6,8 @@
         "src/main.cc",
         "src/currency_core/currency_format_utils.cpp",
         "src/currency_core/currency_format_utils_blocks.cpp",
-		    "src/currency_core/basic_pow_helpers.cpp",
-		    "src/currency_core/basic_pow_helpers.cpp",
+	"src/currency_core/basic_pow_helpers.cpp",
+	"src/currency_core/basic_pow_helpers.cpp",
         "src/crypto/tree-hash.c",
         "src/crypto/crypto.cpp",
         "src/crypto/crypto-ops.c",
@@ -20,12 +20,12 @@
         "src/contrib/ethereum/libethash/keccakf800.c",
         "src/contrib/ethereum/libethash/progpow.cpp",
         "src/contrib/ethereum/libethash/managed.cpp",
-		    "src/currency_core/currency_format_utils_transactions.cpp",
-		    "src/currency_core/genesis.cpp",
-		    "src/currency_core/genesis_acc.cpp",
-		    "src/crypto/random.c",
-		    "src/contrib/ethereum/libethash/keccakf1600.c",
-		    "src/contrib/ethereum/libethash/managed.cpp",
+	"src/currency_core/currency_format_utils_transactions.cpp",
+	"src/currency_core/genesis.cpp",
+	"src/currency_core/genesis_acc.cpp",
+	"src/crypto/random.c",
+	"src/contrib/ethereum/libethash/keccakf1600.c",
+	"src/contrib/ethereum/libethash/managed.cpp",
         "src/contrib/ethereum/libethash/primes.c"
       ],
       "include_dirs": [
@@ -53,6 +53,7 @@
       "cflags_cc": [
         "-std=c++17",
         "-fexceptions",
+	"-w",
         "-frtti"
       ],
       "conditions": [
