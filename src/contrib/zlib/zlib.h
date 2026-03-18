@@ -44,6 +44,10 @@ extern "C" {
 #define ZLIB_VER_REVISION 11
 #define ZLIB_VER_SUBREVISION 0
 
+#ifndef Z_ARG
+#  define Z_ARG(args) args
+#endif
+
 /*
     The 'zlib' compression library provides in-memory compression and
   decompression functions, including integrity checks of the uncompressed data.
